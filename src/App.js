@@ -7,7 +7,6 @@ import { CardContent } from '@material-ui/core';
 import Table from './Table';
 import {sortData, prettyPrintStat} from './util';
 import LineGraph from './LineGraph';
-import numeral from 'numeral';
 import 'leaflet/dist/leaflet.css';
 
 function App() {
@@ -108,8 +107,8 @@ const onCountryChange = async (event) => {
           <CardContent>
             <h3>Live Cases by Country</h3>
             <Table countries={tableData} />
-            <h3>Worldwide new {casesType} </h3>
-            <LineGraph casesType={casesType} />
+            <h3 className='app__graphTitle'>Worldwide new {casesType} </h3>
+            <LineGraph className='app__graph' casesType={casesType} />
           </CardContent>
       </Card>
     </div>
